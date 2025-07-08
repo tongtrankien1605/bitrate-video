@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Bitrate Video by Tống Trần Kiên</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:,">
+     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+</head>
+<body>
+    <div class="container">
+        <button class="speaker-button" onclick="toggleSpeaker()">
+            <span id="speakerIcon">🔊</span>
+        </button>
+        <h1>Tính Bitrate Video by Tống Trần Kiên</h1>
+        <div class="input-container">
+            <input type="number" id="bitrateOrigin" placeholder="Nhập bitrate video gốc (kbps)">
+            <button class="clear-button" onclick="clearInput()">X</button>
+        </div>
+        <div class="input-container">
+            <input type="number" id="mbOrigin" placeholder="Nhập MB video gốc">
+            <button class="clear-button" onclick="clearInput()">X</button>
+        </div>
+        <div class="input-container">
+            <input type="number" id="mbDesired" placeholder="Nhập MB video mong muốn">
+            <button class="clear-button" onclick="clearInput()">X</button>
+        </div>
+        <button class="get-origin-btn" onclick="calculateBitrate()">Tính Bitrate</button>
+        <p id="result"></p>
+        <button class="btnCopy" id="copyButton" style="display:none;" onclick="copyResult()">Copy Kết Quả</button>
+    </div>
+    <audio id="backgroundMusic" loop>
+        <source src="https://raw.githubusercontent.com/tongtrankien1605/tongtrankien1605/main/global/audio/nhac-cuc-chat.mp3" type="audio/mpeg">
+    </audio>
+    <script src="script.js"></script>
+</body>
+</html>
