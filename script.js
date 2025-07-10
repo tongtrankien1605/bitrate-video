@@ -21,11 +21,12 @@ function calculateBitrate() {
     try {
         // Tính bitrate mong muốn
         const bitrateDesired = (mbDesired * bitrateOrigin) / (mbOrigin * 1.09);
-        const resultText = `Bitrate video mong muốn: ${Math.round(bitrateDesired)} kbps`;
+        const roundedBitrate = Math.round(bitrateDesired);
+        const resultText = `Bitrate video mong muốn: ${roundedBitrate} kbps`;
 
         result.innerHTML = resultText;
         copyButton.style.display = 'inline-block';
-        copyButton.setAttribute('data-result', resultText);
+        copyButton.setAttribute('data-result', roundedBitrate); // Chỉ lưu số
     } catch (error) {
         result.innerHTML = 'Có lỗi khi tính toán, vui lòng thử lại';
         copyButton.style.display = 'none';
@@ -101,7 +102,7 @@ document.addEventListener('click', (e) => {
 // Kiểm tra ảnh nền
 window.addEventListener('load', () => {
     const bgImage = new Image();
-    bgImage.src = 'https://raw.githubusercontent.com/tongtrankien1605/tongtrankien1605/main/global/image/city-night.jpg';
+    bgImage.src = 'https://cdn.jsdelivr.net/gh/tongtrankien1605/tongtrankien1605@main/global/image/city-night.jpg';
     bgImage.onload = () => console.log('Ảnh nền tải thành công');
     bgImage.onerror = () => console.log('Lỗi tải ảnh nền, kiểm tra link');
 });
